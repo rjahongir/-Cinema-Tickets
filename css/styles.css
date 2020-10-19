@@ -33,13 +33,16 @@ body {
 
 .container {
    width: 100%;
-   height: 800px;
    max-width: 1040px;
+   margin-top: 20px;
    padding-left: 20px;
    padding-right: 20px;
    margin-left: auto;
    margin-right: auto;
-   background-color: cadetblue;
+}
+
+.main {
+   flex-grow: 1;
 }
 
 .movies__list {
@@ -55,60 +58,64 @@ body {
    position: relative;
    z-index: 1;
    display: flex;
+   opacity: 0.6;
    flex-direction: column;
    margin-left: 10px;
    margin-right: 10px;
+   margin-bottom: 20px;
    border-radius: 5px;
    text-align: center;
+   transition: opacity 0.3s ease;
 }
 
 .movies__item:hover {
    z-index: 5;
+   opacity: 1;
 }
 
 .movies-card__link{
+   position: relative;
+   z-index: 2;
    display: block;
    border-radius: 5px;
    overflow: hidden;
+   box-shadow: 2px 10px 10px -3px rgb(66, 66, 66);
 }
 
 .movies-card__img {
-   position: relative;
-   z-index: 2;
    display: block;
 }
 
 .movies-card__info {
    position: absolute;
    z-index: 1;
+   opacity: 0;
+   transform: scale(0);
    top: 20px;
    left: -20px;
    right: -20px;
-   padding-top: 370px;
+   padding-top: 340px;
    padding-left: 20px;
    padding-right: 20px;
    border-radius: 5px;
    overflow: hidden;
    background-color: #fff;
-   transition: color 0.4s ease, transform 0.4s ;
+   transition: color 0.3s ease, transform 0.6s cubic-bezier(.55,.19,.41,1.82);
 }
 
-/* .movies__item:hover .movies-card__info {
+ .movies__item:hover .movies-card__info {
  display: block;
+ transform: scale(1);
  opacity: 1;
-} */
+} 
 
 .movies-card__name {
-   margin-top: 0;
+   margin:0;
    font-size: 23px;
    font-weight: bold;
    font-family: monospace;
    text-transform: uppercase;
-   transition: color 0.3s ease, transform 0.5s cubic-bezier(.03,1.28,.21,1.78);
-}
-.movies-card__name:hover {
-   color:rgb(30, 76, 109);
-   transform: scale(1.1);
+   transition: color 0.3s ease;
 }
 
 .movies-card__tagline {
@@ -121,18 +128,35 @@ body {
    display: flex;
    flex-direction: column;
 }
-.movies-card__price {
-
+.movies-card__priec{
    color: rgb(77, 77, 77);
-   font-size: 14px;
+   font-size: 15px;
 }
 .old {   
    font-weight: bold;
    font-size: 18px;
+   text-decoration: none;
    color:rgb(29, 192, 37);
-   transition: color 0.3s ease, transform 0.5s cubic-bezier(.03,1.28,.21,1.78);
+   transition: color 0.3s ease;
 }
-.movies-card__priecs:hover .old {
-   color:rgb(51, 73, 199);
-   transform: scale(1.1); 
+
+.movies-card__buy-button {
+   display: block;
+   padding: 15px;
+   margin-left: -20px;
+   margin-right: -20px;
+   font-family: monospace;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: center;
+   text-transform: uppercase;
+   background-color: rgb(51, 45, 45);
+   color: white;
+   transition:background-color 0.4s ease ;
+   
+}
+
+.movies-card__buy-button:hover{
+   border-radius:0 0 3px 3px;
+   background-color: rgb(17, 17, 17);
 }
