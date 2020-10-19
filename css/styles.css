@@ -20,9 +20,27 @@ html {
 }
 
 body {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
    font-family: "Arial", "sans-serif";
    font-size: 16px;
    line-height: 1.5;
    margin: 0;
    padding: 0;
+   background-color: rgb(48,129,187);
+}
+
+.container {
+   width: 100%;
+   max-width: 1040px;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: cadetblue;
+}
+
+.movies__list {
+   
 }
